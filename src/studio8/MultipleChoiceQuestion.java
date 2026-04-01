@@ -11,11 +11,24 @@ public class MultipleChoiceQuestion extends Question {
 	 * @param points
 	 * @param choices
 	 */
+	private String choices;
+	private String prompt;
+	private String answer;
+	private int points;
+
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
 		// Call the super class constructor, then create and set
+		super (prompt, answer,points);
 		// instance variables for any values that aren't handled
+		this.choices = choices;
+	}
 		// by the base class
-		throw new NotYetImplementedException();
+		if (this.answer == answer) {
+			return points;
+		}else{
+			return 0;
+		}
+		}
 	}
 	
 	/**

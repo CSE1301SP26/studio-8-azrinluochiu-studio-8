@@ -1,6 +1,6 @@
 package studio8;
 
-import support.cse131.NotYetImplementedException;
+//import support.cse131.NotYetImplementedException;
 
 public class Question {
 	
@@ -10,8 +10,15 @@ public class Question {
 	 * @param answer
 	 * @param points
 	 */
+	private String prompt;
+	private String answer;	
+	private int points;
+
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		this.prompt = prompt;
+		this.answer = answer;
+		this.points = points;
+
 	}
 	
 	/**
@@ -29,7 +36,7 @@ public class Question {
 	 */
 	public int checkAnswer(String givenAnswer) {
 		if(answer.equals(givenAnswer)) { //String comparison
-			return this.points;
+			return points;
 		} else {
 			return 0;
 		}
@@ -40,7 +47,7 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return points;
 	}
 	
 	/**
@@ -48,10 +55,14 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
 		// TODO: Create a Question object of your own!
+		Question myQuestion = new Question ("Who was the first president?", "George Washington", 20);
+		
+        System.out.println("Answer: " + myQuestion.getAnswer());
+        System.out.println("Points: " + myQuestion.getPoints());
 	}
 }
